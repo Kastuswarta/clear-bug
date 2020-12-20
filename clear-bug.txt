@@ -22,7 +22,7 @@ namespace Lessons
                 str = Console.ReadLine();
                 bool h=long.TryParse(str, out a);
                 Console.WriteLine(a);
-                if (a == 0 || !h )
+                if (a == 0 || !h )// you should make differential of log comands....
                 {
                     Console.WriteLine(" ");
                     Console.WriteLine("Проверяемый символ является буквенным выражением");
