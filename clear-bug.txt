@@ -1,0 +1,77 @@
+using System;
+
+namespace Lessons
+{
+    class Parity
+    {
+        static void Main(string[] args)
+        {
+            Parity parity = new Parity(); ;
+            bool endApp = false;
+            string str;
+            long a = 0, b, c;
+            long value;
+            while (!endApp)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("Проверка   чётности   вводимого  числа");
+                Console.WriteLine("методом пробного преобразования строки");
+                Console.WriteLine("");
+                Console.WriteLine("введи   проверяемое    целое   число");
+                Console.WriteLine(" ");
+                str = Console.ReadLine();
+                bool h=long.TryParse(str, out a);
+                Console.WriteLine(a);
+                if (a == 0 || !h )
+                {
+                    Console.WriteLine(" ");
+                    Console.WriteLine("Проверяемый символ является буквенным выражением");
+                    Console.WriteLine("         числом ноль или  дробным числом        ");
+                    Console.WriteLine(" ");
+                    Console.WriteLine("Необходимо ввести целочисленное значение");
+                }
+                else
+                {
+                    b = a / 2;
+                    c = b + b;
+                    if (a == c)
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("проверяемое число       "  + a +  "        является  ЧЁТНЫМ");
+                        Console.WriteLine("");
+                    }
+                    else
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("проверяемое число       "  + a +  "        является НЕЧЁТНЫМ");
+                        Console.WriteLine("");
+                    }
+                    Console.WriteLine("");
+                    Console.WriteLine("повторная проверка чётности  вводимого числа");
+                    Console.WriteLine("методом контроля наличия остатка при делении");
+                    Console.WriteLine("");
+                    value = a;
+                    if (value % 2 == 0)
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("проверяемое число      " + value + "       является  ЧЁТНЫМ");
+                        Console.WriteLine("");
+                    } 
+                    else
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("проверяемое число     " + value + "      является  НЕЧЁТНЫМ");
+                        Console.WriteLine("");
+                    }
+                    Console.WriteLine("");
+                    Console.Write("нажми (n) и ввод, чтобы закрыть приложение или ");
+                    Console.WriteLine("");
+                    Console.Write("   нажми  любую  клавишу,  чтобы  продолжить ");
+                    Console.WriteLine("");
+                    if (Console.ReadLine() == "n") 
+                        break;  
+                }
+            }    return;
+        }
+    }
+}
